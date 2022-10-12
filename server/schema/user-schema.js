@@ -2,6 +2,11 @@ import mongoose from 'mongoose';
 import autoIncreament from 'mongoose-auto-increment';
 
 const userSchema = mongoose.Schema({
+    created_by:{
+        type: mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref: 'UserAuth'
+    },
     name: String,
     username: String,
     email: String,
